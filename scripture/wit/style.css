@@ -156,9 +156,8 @@ body{
 /* results */
 
 .results{
-    display: none;
     width: 100%;    
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-end;
     align-content: center;
@@ -177,7 +176,7 @@ body{
     align-content: center;
 }
 
-.answers{
+.results .answers{
     height: 90%;
     overflow: auto;
     display: flex;
@@ -197,14 +196,21 @@ body{
     text-align: justify;
 }
 
-.answers #results__answer{
+.answers .results__answer{
     width: 80%;
     height: auto;
     font-size: 1.5rem;
-    background-color: #6ab04c;
+    /* background-color: #6ab04c; */
+    background-color: #ff3f34;
+    color: white;
     padding: 1rem;
     margin-bottom: 1rem;
     text-align: justify;
+}
+
+.answers .results__answer.correct{
+    background-color: #6ab04c;
+    color:black;
 }
 .answers #results__placeholder{
     width: 80%;
@@ -257,7 +263,7 @@ body{
         width: 98%;
     }
     
-    .answers #results__answer{
+    .answers .results__answer{
         width: 98%;
     }
     .answers #results__placeholder{

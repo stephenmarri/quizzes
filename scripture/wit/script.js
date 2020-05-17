@@ -40,19 +40,19 @@ async function loadQuestion(name){
 
 async function showScores(){
     document.querySelector('.main-container').style.display = 'none';
-    document.querySelector('.results').style.display = 'block';
+    document.querySelector('.results').style.display = 'flex';
     console.log(userAnswers);
-    generateScoreText();
     for(let i=1; i<=totalQuestions;i++){
-        generateOneQAPair(i);
+        await generateOneQAPair(i);
     }
+    await generateScoreText();
 }
 
 async function generateOneQAPair(name){
     let span_q = document.createElement('span');
     let span_a = document.createElement('span');
     let span_p = document.createElement('span');
-    span_a.id = "results__answer";
+    span_a.className = "results__answer";
     span_q.id = "results__question";
     span_p.id = "results__placeholder";
     span_q.textContent = content__json['question_' + name.toString()].question;
@@ -67,20 +67,23 @@ async function generateOneQAPair(name){
 async function generateScoreText(){
     let span_s = document.createElement('span');
     span_s.id = 'score__text';
-    span_s.textContent = `Score ${calculateScore()}/5`;
+    let score = await calculateScore();
+    span_s.textContent = `Score ${score}/5`;
     document.querySelector('.score').appendChild(span_s);
 
 }
 
- function calculateScore(){
+ async function calculateScore(){
     let score=0;
+    let anwers = document.getElementsByClassName('results__answer');
     for(let i=0;i<userAnswers.length;i++){
         let ans = content__json['question_' + (i+1).toString()].answer.toString();
         if(userAnswers[i] != null){
             if(ans.toLowerCase().startsWith(userAnswers[i].trim().toLowerCase())){
                 score++;
+                anwers[i].classList.add('correct');
             }
         }
-    }
+    }     
     return score;
 }
