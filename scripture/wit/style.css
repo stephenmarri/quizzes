@@ -1,0 +1,159 @@
+:root{
+    --main-bg-color: green;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+
+}
+html{
+    font-family: 'Ubuntu','Roboto', sans-serif;
+
+}
+
+body{
+    font-size: 10px;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#f39c12, #f1c40f);
+}
+
+.main-container{
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #130f40   ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* questions */
+.questions-container{
+    width: 100%;
+    height: 70%;
+    display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       align-content: center;
+}
+
+.question-box{
+    width: 80%;
+    height: 90%;
+    align-self: center;
+    background-color: #95a5a6;
+    display: flex;
+    flex-direction: column;
+       justify-content: center;
+       align-content: center;
+       padding-left: 1rem;
+       padding-right: 1rem;
+}
+
+#question__text{
+    display: block;
+    font-size: 2rem;
+    
+}
+/* questions */
+
+
+/* options */
+.options{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+    padding-bottom: 0.5rem;
+}
+
+.options input{
+    display: block;
+    width: 80%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+
+.options input:focus{
+    outline: 0;
+}
+.options input::placeholder{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* options */
+
+
+/* controls */
+.controls{
+    width: 80%;
+    height: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.controls #controls--hint{
+    color: white;
+}
+.controls #controls--button{
+    width: 40%;
+    height: 40%;
+    border: 0;
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.controls #controls--button:active{
+    transform: scale(0.96);
+}
+
+.controls #controls--button:focus{
+    outline: 0;
+}
+/* controls */
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    .main-container{
+        width: 100%;
+        top: 0%;
+        height: 100%;
+        margin: 0;
+        background-color: #130f40;
+    }
+    .options {
+        height: 13%;
+    }
+    .options input{
+        width: 95%;
+        height: 85%;
+    }
+
+    .question-box{
+        width: 95%;
+    }
+    .controls{
+        width: 95%;
+    }
+  }
+/* Media Queries */
