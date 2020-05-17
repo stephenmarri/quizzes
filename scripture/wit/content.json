@@ -1,0 +1,32 @@
+{
+    "question_1": {
+        "id":"1",
+        "question":"Then the Lord said, Leave this place and go east and hide yourself near Cherith Brook, east of the Jordan. The brook will supply you with water to drink, and I have commanded ravens to bring you food there.",
+        "placeholder":"Who is the Lord speaking to?",
+        "answer":"Elijah (1 Kings 17:3-4)"    
+    },
+    "question_2":{
+        "id":"2",
+        "question":"So give me the wisdom I need to rule your people with justice and to know the difference between good and evil. Otherwise, how would I ever be able to rule this great people of yours?",
+        "placeholder":"Who is asking this?",
+        "answer":"Solomon (1 Kings 3:9)"    
+    },
+    "question_3":{
+        "id":"2",
+        "question":"Don't you realize that as long as David is alive, you will never be king of this country? Now go and bring him here - he must die!",
+        "placeholder":"Saul said this. To whom?",
+        "answer":"Jonathan (1 Samuel 20:31)"    
+    },
+    "question_4":{
+        "id":"2",
+        "question":"He said, 'You called me, and here I am. But Eli answered, 'I didn't call you; go back to bed'.",
+        "placeholder":"Who went back to bed?",
+        "answer":"Samuel (1 Samuel 3:5)"    
+    },
+    "question_5":{
+        "id":"2",
+        "question":"I take care of my father's sheep. Any time a lion or a bear carries off a lamb, I go after it, attack it, and rescue the lamb. And if the lion or bear turns on me, I grab it by the throat and beat it to death. I have killed lions and bears, and I will do the same to this heathen Philistine, who has defied the army of the living God. The Lord has saved me from lions and bears; he will save me from this Philistine",
+        "placeholder":"Who said this?",
+        "answer":"David (1 Samuel 17:34-37)"    
+    }
+}
