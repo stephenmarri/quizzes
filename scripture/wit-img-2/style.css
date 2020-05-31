@@ -128,9 +128,54 @@ body{
     align-items: flex-start;
 }
 
-.controls #controls--hint{
-    color: white;
+.controls #controls--check{
+    width: 50%;
+    height: 50%;
+    border: 0;    
+    font-size: 1.5rem;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    
 }
+
+.controls #controls--check #check__symbol{        
+    width: 26%;
+    margin-left: 0.2rem;
+    background-color: rgba(199, 236, 238,1);
+    font-size: 2.2rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.controls #controls--check #check__symbol i.yes{
+    color: #6ab04c;
+}
+.controls #controls--check #check__symbol i.no{
+    color: #EA2027;
+}
+.controls #controls--check #check__text{    
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 1.5rem;
+    background-color: #eb4d4b;
+    font-family: cursive;
+    color: white;
+    cursor: pointer;
+
+}
+
+.controls #controls--check #check__text.disabled{ 
+    background-color: #57606f;    
+    cursor: default;
+    transform: none;
+}   
+
 .controls #controls--button{
     width: 40%;
     height: 50%;
@@ -146,6 +191,14 @@ body{
 }
 
 .controls #controls--button:focus{
+    outline: 0;
+}
+
+.controls #check__text:active{
+    transform: scale(0.96);
+}
+
+.controls #check__text:focus{
     outline: 0;
 }
 /* controls */
@@ -249,6 +302,9 @@ body{
         width: 95%;        
     }
     .controls #controls--button{        
+        height: 40%;
+    }
+    .controls #controls--check{        
         height: 40%;
     }
     .answers{

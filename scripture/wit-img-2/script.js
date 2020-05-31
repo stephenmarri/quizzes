@@ -8,22 +8,29 @@ var counter__text = document.getElementById('counter__text');
 var nextButton = document.getElementById('controls--button');
 var userInput = document.getElementById('input__user');
 var answerContainer = document.querySelector('.answers');
+var CheckButton = document.querySelector('#check__text');
+var checkResultDiv = document.querySelector('#check__symbol');
+var checkIcon = document.querySelector('#check__icon');
 var currNumber = 1;  
 var totalQuestions;
 var userAnswers=[];
+var checkClickCounter = 0;
 async function main(){       
     
     content__json = await (await fetch("content.json")).json();
     totalQuestions =  Object.keys(content__json).length;
     loadQuestion(currNumber)    
     nextButton.addEventListener('click', IncremenQ)
-    
+    CheckButton.addEventListener('click', checkHandler)
 }
 
 async function IncremenQ(){
     userAnswers.push(userInput.value.length > 0 ? userInput.value.toString() : null);
     userInput.value='';
     currNumber+=1;
+    checkClickCounter=0;
+    checkResultDiv.style.display='none'
+    CheckButton.classList.remove('disabled')
     if(currNumber<=totalQuestions) await loadQuestion(currNumber);
     if(currNumber>totalQuestions) await showScores();
     
@@ -88,3 +95,39 @@ async function generateScoreText(){
     }     
     return score;
 }
+
+async function checkHandler(){
+    
+    let actualAns;
+    userAns = userInput.value;
+    actualAns = content__json['question_' + currNumber.toString()].answer;
+    
+
+    if(checkClickCounter>2){        
+        return
+    }
+
+    if( userAns.length>0){   
+        checkIcon.className="fas";
+        let icon = document.createElement('i');       
+        
+        checkResultDiv.style.display='flex'
+        if(actualAns.toLowerCase().startsWith(userAns.trim().toLowerCase())){            
+            checkIcon.classList.add('fa-check-circle')          
+            checkIcon.classList.add('yes')          
+            CheckButton.classList.add('disabled')
+        }else{            
+            checkIcon.classList.add('fa-times-circle')          
+            checkIcon.classList.add('no')          
+        }
+        checkClickCounter++;
+        if(checkClickCounter>2){
+            CheckButton.classList.add('disabled')
+            return
+        }
+    }    
+
+}
+
+//<i class="fas fa-check-circle"></i>  --  color: #6ab04c;    
+//<i class="fas fa-check-circle"></i>  --  color: #EA2027;;
