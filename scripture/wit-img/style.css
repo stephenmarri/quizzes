@@ -1,0 +1,272 @@
+:root{
+    --main-bg-color: green;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+
+}
+html{
+    font-family: 'Ubuntu','Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+
+}
+
+body{
+    font-size: 10px;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#f39c12, #f1c40f);
+}
+
+.main-container{
+    display: block;
+    width: 40%;
+    height: 80%;
+    top: 10%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #130f40   ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* counter */
+.counter{
+    height: 7%;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 10%;
+}
+
+.counter #counter__text{
+    width: 25%;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+/* counter */
+
+/* questions */
+.questions-container{
+    width: 100%;
+    height: 60%;
+    display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       align-content: center;
+}
+
+.question-box{
+    width: 80%;
+    height: 100%;
+    align-self: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+       justify-content: center;
+       align-content: center;
+       padding: 0rem;
+}
+
+.question-box img{
+    width: 100%;
+    height: 100%;
+}
+/* questions */
+
+
+/* options */
+.options{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+    padding-bottom: 0.5rem;
+}
+
+.options input{
+    display: block;
+    width: 80%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.options input:focus{
+    outline: 0;
+}
+.options input::placeholder{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* options */
+
+
+/* controls */
+.controls{
+    width: 80%;
+    height: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.controls #controls--hint{
+    color: white;
+}
+.controls #controls--button{
+    width: 40%;
+    height: 50%;
+    border: 0;
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.controls #controls--button:active{
+    transform: scale(0.96);
+}
+
+.controls #controls--button:focus{
+    outline: 0;
+}
+/* controls */
+
+
+/* results */
+
+.results{
+    width: 100%;    
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+    height: 100%;
+}
+
+.results .score{
+    align-self: center;
+    height: 10%;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.results .answers{
+    height: 90%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.answers #results__question{
+    width: 80%;    
+    height: auto;
+    font-size: 1.5rem;
+    background-color: #130f40;
+    color: white;
+    padding: 0.2rem;
+    text-align: justify;
+}
+
+.answers .results__answer{
+    width: 80%;
+    height: auto;
+    font-size: 1.5rem;
+    /* background-color: #6ab04c; */
+    background-color: #ff3f34;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.answers .results__answer.correct{
+    background-color: #6ab04c;
+    color:black;
+}
+.answers #results__placeholder{
+    width: 80%;
+    height: auto;
+    font-size: 1.5rem;
+    background-color: #22a6b3;
+    padding: 1rem;
+    text-align: justify;
+}
+
+/* results */
+
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    .main-container{
+        width: 100%;
+        top: 0%;
+        height: 100%;
+        margin: 0;
+        background-color: #130f40;
+    }
+    .counter{
+        padding-left: 2.5%;
+    }
+    .options {
+        height: 13%;
+    }
+    .options input{
+        width: 95%;
+        height: 85%;
+    }
+
+    .question-box{
+        width: 95%;
+    }
+    .controls{
+        width: 95%;        
+    }
+    .controls #controls--button{        
+        height: 40%;
+    }
+    .answers{
+        width:95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .answers #results__question{
+        width: 98%;
+        height: auto;
+    }
+    
+    .answers .results__answer{
+        width: 98%;
+    }
+    .answers #results__placeholder{
+        width: 98%;
+    }
+  }
+/* Media Queries */
