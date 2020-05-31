@@ -42,7 +42,7 @@ async function loadQuestion(name){
     question_img.src = question;
     counter__text.textContent = currNumber + '/' + totalQuestions;
     userInput.placeholder = content__json['question_' + name.toString()].placeholder; 
-    userInput.focus();
+    //userInput.focus();
     if(currNumber==totalQuestions) nextButton.textContent = "Submit";
 }
 
